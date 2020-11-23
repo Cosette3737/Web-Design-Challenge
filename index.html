@@ -3,54 +3,64 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>:Latitude Analysis </title>
+  <title>Latitude Analysis </title>
   <link rel="stylesheet" href="reset.css">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
   <link rel ="stylesheet" href= "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> 
-
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 </head>
 
 <body>
 <h1>
-  <nav class="navbar navbar-inverse">
-      <div class="container-fluid">
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark background">
+    <div class="container-fluid">
       <div class="navbar-header">
-          <a class="navbar-brand" href="index.com">Latitude</a>
-        <diva class="collapse navbar-collapse" id="myNavbar">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-            <a class="nav navbar-nav">
-            <a class="active" href="#">Plots</a>
-              <li><a href="#">Max Temp</a></li>
-              <li><a href="#">Humidity</a></li>
-              <li><a href="#">Cloudiness</a></li>
-              <li><a href="#">Wind Speed</a></li>
-            </a></button>
-    
-          <li class="active"><a href="#">Comparisons</a></li>
-          <li class="active"><a href="#">Data</a></li>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-          </ul>
-        </div>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+        </button>
+        <a class="navbar-brand logo navbar-collapse"><a href="index.html"><a style="font-color=white"></a> Latititude</a>
       </div>
-    </nav>
-       
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right navbar-light">
+         <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown">Plots<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="max_temp.html">Max Temperature</a></li>
+              <li><a href="humidity.html">Humidity</a></li>
+              <li><a href="cloudiness.html">Cloudiness</a></li>
+              <li><a href="wind_speed.html">Wind Speed</a></li>
+            </ul>
+            <li class="active navbar-light"><a href="Comparison.html">Comparison</a></li>
+            <li class="active navbar-light"><a href="data.html">Data</a></li>
+            <li class="navbar-light">
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+        </ul>
+      </div>
+    </div>
+  </nav>
+    
     </h1>
-    <h2> Summary: Latitude vs. X </h2><br>
+    <h2> Summary: Latitude vs. X <br>
     
     <b>
       <hr>
           <p>
-           <img src="https://raw.githubusercontent.com/Cosette3737/Web-Design-Challenge/main/images/Fig1.png"> 
-           <p> The purpose of this project was to analyze the significance of latitude on temperature, humidity, cloudiness, and windspeed. </p>
+           <img src="https://raw.githubusercontent.com/Cosette3737/Web-Design-Challenge/main/images/Fig1.png"> </h2>
+           <p style="font-style: normal; font-family: Verdana, Geneva, Tahoma, sans-serif;"> The purpose of this project was to analyze the significance of latitude on temperature, humidity, cloudiness, and windspeed. </p>
         </article>
       </section>
     </main>
   </div>
-  <h3>Visualizations</h3><br>
+  <h2>
+  Visualizations<br>
   <b>
     <hr>
   </b>
@@ -60,6 +70,7 @@
     <img src= "https://raw.githubusercontent.com/Cosette3737/Web-Design-Challenge/main/images/Fig3.png" width= "300" height="300"alt="Cloudiness">
     <img src="https://raw.githubusercontent.com/Cosette3737/Web-Design-Challenge/main/images/Fig4.png" width= "300" height="300"alt="Wind Speed">
  </article>
+ </h2>
 </body>
 
 </html>

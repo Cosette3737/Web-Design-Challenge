@@ -1,34 +1,19 @@
-body {
-  background-color: cadetblue;
-}
-h1{ font-size: 80px; color: rgb(249, 253, 253);
-    background-color: teal;
-}
-h2 {
-  font-size: 80px; color: teal;
-    background-color: rgb(250, 253, 253);
-  color
-}
+
+<DOCTYPE html>
+<html>
+<head>
+<style>
+
+<h1 style= "font-size: 200px"; "font-family: Helvetica"; "font-color: white";
+    background-color: teal>
+
+
+  <h2 style= font-size: 150px font-color: teal;
+    background-color: white>
 
 h3 {
-  font-size: 30px;
+  font-size: 1100px; font-family: Verdana, Geneva, Tahoma, sans-serif; background-color: rgb(238, 234, 234)
 }
-<style> 
-/* Modify the background color */ 
-
-.nav class="navbar navbar-expand-lg navbar-light bg-light"{ 
-  background-color: rgb(32, 122, 115); 
-} 
-/* Modify brand and text color */ 
-
-.navbar-custom .navbar-brand, 
-.navbar-custom .navbar-text { 
-  color: rgb(24, 177, 164); 
-} 
 </style>
-/* Giving our navbar some padding and a background color */
-.navbar {
-  padding: 10px;
-  background: #5191fd;
-}
-
+</head>
+</html>
