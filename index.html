@@ -16,34 +16,36 @@
 
 <body>
 <h1>
-  <nav class="navbar navbar-expand-lg navbar-default">
+  <nav class="navbar navbar-expand-lg bg-info navbar-dark">
+    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+    </svg>
     <div class="container-fluid">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>                        
         </button>
-        <a class="navbar-brand logo navbar-collapse"><a href="index.html"><a style="font-color=white"></a> Latititude</a>
+
+        <a class style="font-size:125; color:antiquewhite"></a><a class="navbar-brand logo navbar-light" href="index.html">Latititude</a>
       </div>
+      
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav navbar-right navbar-light">
          <li class="dropdown">
-            <ul class="btn-group-vertical" role="group" aria-labelledby="dropdownMenu1">
-            <a class="dropdown-toggle" data-toggle="dropdown">Plots<span class="caret"></span></a>
+          <a class="dropdown-toggle" data-toggle="dropdown">Plots<span class="none"></span></a>
             <ul class="dropdown-menu">
               <li><a href="max_temp.html">Max Temperature</a></li>
               <li><a href="humidity.html">Humidity</a></li>
               <li><a href="Cloudiness.html">Cloudiness</a></li>
-              <li><a href="wind_speed.html">Wind Speed</a></li>
-            </ul>
-            <li class="active navbar-light"><a href="Comparison.html">Comparison</a></li>
-            <li class="active navbar-light"><a href="data.html">Data</a></li>
-            <li class="navbar-light">
+              <li><a href="wind_speed.html">Wind Speed</a></li> 
+              <li><a href="Comparison.html">Comparison</a></li>
+              <li><a href="data.html">Data</a></li> </ul>
+          </li>
+          <a class= "btn-group-vertical" role="group" aria-labelledby="dropdownMenu1">
+
+
           </li>
         </ul>
-        <ul class="nav navbar-nav navbar-right">
-        </ul>
+       </ul>
       </div>
     </div>
   </nav>
@@ -55,7 +57,7 @@
       <hr>
           <p>
            <img src="https://raw.githubusercontent.com/Cosette3737/Web-Design-Challenge/main/images/Fig1.png"> </h2>
-           <p style="font-style: normal; font-family: Verdana, Geneva, Tahoma, sans-serif;"> The purpose of this project was to analyze the significance of latitude on temperature, humidity, cloudiness, and windspeed. </p>
+           <p style="font-style: normal; font-family: Verdana, Geneva, Tahoma, sans-serif;"> The purpose of the weatherpy project was to analyze a dataset of temperature, humidity, cloudiness, and windspeed on a random sample of locations across the globe. <br> The data was collected with an API and analyzed with the help of PANDAS and matplotlib. With the help of this website, the findings are easily accesible to view.</p>
         </article>
       </section>
     </main>
