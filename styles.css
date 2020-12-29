@@ -4,22 +4,26 @@
 <head>
 <style>
 
-<h1 style= "font-size: 200px"; "font-family: Helvetica"; "font-color: white";
-    background-color: teal>
+<h1 style= "font-size: 200px"; "font-family: Helvetica"; "font-color: black"; "background-color:#629EB6">
 
 
   <h2 style= font-size: 150px font-color: teal;
     background-color: white>
+
+    .center {
+      margin-left: auto;
+      margin-right: auto;
+    }
 
 h3 {
   font-size: 1100px; font-family: Verdana, Geneva, Tahoma, sans-serif; background-color: rgb(238, 234, 234)
 }
 </style>
 
-<a class style="font-size: 300%"; "font-color: white">
+<a class style="font-size: 300%"; "font-color: black">
 
 .dropbtn {
-  background-color: #3498DB;
+  background-color: #00e0e0;
   color: white;
   padding: 16px;
   font-size: 16px;
