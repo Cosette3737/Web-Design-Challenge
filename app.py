@@ -23,6 +23,9 @@ model = pickle.load(open('finalized_model.sav', 'rb'))
 def home():
     return render_template('index.html')
 
+@app.route('/tool')
+def home():
+    return render_template('.html')
 
 #define the route for post request method 
 @app.route("/predict", methods=['POST'])
@@ -68,17 +71,14 @@ def predict():
 def explore():
     return render_template('explore.html')
 
-@app.route('/')
+@app.route('/bio')
 def bio():
     return render_template('bio.html') 
 
-@app.route('/comps')
-def comps():
-    return render_template('comps.html') 
 
-@app.route('/explore', methods='GET')
+@app.route('/data', methods='GET')
 def breast_data():
-    return render_template('explore.html')
+    return render_template('data.html')
 
 
 
