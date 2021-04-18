@@ -6,11 +6,11 @@ function init() {
 // get table references
     var tbody = d3.select("tbody");
     buildTable(data);
-function buildTable(data) {
+  function buildTable(data) {
   // First, clear out any existing data
-  tbody.html("");
+    tbody.html("");
   // and append a row and cells for each value in the row
-  data.forEach((dataRow) => {
+    data.forEach((dataRow) => {
     // Append a row to the table body
     var row = tbody.append("tr");
 
@@ -21,8 +21,7 @@ function buildTable(data) {
       cell.text(val);
     });
   });
-}
-buildTable(tableData);
-  });
-}
+};
+//buildTable(tableData);
+});}
 init();

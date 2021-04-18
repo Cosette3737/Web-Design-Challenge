@@ -21,10 +21,10 @@ model = pickle.load(open('finalized_model.sav', 'rb'))
 
 @app.route('/index')
 def home():
-    return render_template('index.html')
+    return render_template('index1.html')
 
 @app.route('/tool')
-def home():
+def tool():
     return render_template('tool.html')
 
 #define the route for post request method 
@@ -44,7 +44,7 @@ def predict():
         Fractal_Dimension = float(request.form['Fractal_Dimension'])
         Radius = float(request.form['Radius'])
         Perimeter = float(request.form['Perimeter'])
-
+        
       
     # open file pickle.load x and y
     new_data = [[Texture, Area, Concave, Smoothness, Symmetry, Texture, Concavity, Compactness, Fractal_Dimension, Radius, Perimeter]]
@@ -78,13 +78,13 @@ def bio():
     return render_template('bio.html') 
 
 
-@app.route('/data', methods='GET')
-def breast_data():
+@app.route('/data')
+def data():
     return render_template('data.html')
 
 
 
 if __name__ == '__main__':
-    # app.run(debug=True)
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host='0.0.0.0', port=port)
+    app.run(debug=True)
+   # port = int(os.environ.get("PORT", 5000))
+    #app.run(host='0.0.0.0', port=port)
