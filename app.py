@@ -25,7 +25,7 @@ def home():
 
 @app.route('/tool')
 def home():
-    return render_template('.html')
+    return render_template('tool.html')
 
 #define the route for post request method 
 @app.route("/predict", methods=['POST'])
@@ -47,12 +47,14 @@ def predict():
 
       
     # open file pickle.load x and y
-    new_data= [[Texture, Area, Concave, Smoothness, Symmetry, Texture, Concavity, Compactness, Fractal_Dimension, Radius, Perimeter]]
+    new_data = [[Texture, Area, Concave, Smoothness, Symmetry, Texture, Concavity, Compactness, Fractal_Dimension, Radius, Perimeter]]
+    
     # apply x scaler to xdata
     model = pickle.load(open("finalized_model.sav", "rb"))
 
-
-    prediction = model.(new_data)
+    print(new_data)
+    prediction = (model.predict(new_data))
+    print(prediction)
     # apply y scaler.inverse transform
     output = round(prediction[0],2)
 
@@ -61,11 +63,11 @@ def predict():
 
 
     if output:           #condition for invalid values
-        return render_template('index.html', prediction_text ="These diagnostic features indicate".format(output))
+        return render_template('tool.html', prediction_text ="These diagnostic features indicate".format(output))
         
     #html form to be displayed on screen when no values are inserted; without any output or prediction
     else:
-        return render_template('index.html')
+        return render_template('tool.html')
 
 @app.route('/explore')
 def explore():
