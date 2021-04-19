@@ -9,10 +9,28 @@
   <link rel="stylesheet" href="../static/css/style.css">
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <!--link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"-->
+  <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+  <script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+  <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+  <script src="https://cdn.amcharts.com/lib/4/maps.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
   
-  <title>Properties</title>
+  <title>Breast Cancer</title>
 
+  <style>
+    #chartdiv {
+      width: 100%;
+      height: 500px;
+    }
+    #chartdiv2 {
+      width: 100%;
+      height: 500px;
+    }
+      #chartdiv3 {
+        width: 100%;
+        height: 500px
+      }
+      </style>
     <!------ Include the above in your HEAD tag ---------->
 </head>
 <body>
@@ -21,38 +39,9 @@
     <section id="team" class="pb-5">
             <div class="container"></div>
             <div class="col-md-10">
-                <div id="table-area" class="">
-                  <table id="data-table" class="table table-striped">
-                    <thead>
-                      <tr>
-                        <th class="table-head">id</th>
-                        <th class="table-head">diagnosis</th>
-                        <th class="table-head">radius_mean</th>
-                        <th class="table-head">texture_mean</th>
-                        <th class="table-head">perimeter_mean</th>
-                        <th class="table-head">area_mean</th>
-                        <th class="table-head">smoothness_mean</th>
-                        <th class="table-head">compactness_mean</th>
-                        <th class="table-head">concavity_mean</th>
-                        <th class="table-head">concave_mean</th>
-                        <th class="table-head">symmetry_mean</th>
-                        <th class="table-head">fractal_dimension_mean</th>
-                        <th class="table-head">radius_se</th>
-                        <th class="table-head">texture_se</th>
-                        <th class="table-head">perimeter_se</th>
-                        <th class="table-head">area_se</th>
-                        <th class="table-head">smoothness_se</th>
-                        <th class="table-head">compactness_se</th>
-                        <th class="table-head">concavity_se</th>
-                        <th class="table-head">concave_points_se</th>
-                        <th class="table-head">symmetry_se</th>
-                        <th class="table-head">fractal_dimension_se</th>
-                      </tr>
-                    </thead>
-                    <tbody></tbody>
-                  </table>
-                </div>
-              </div>
+              <div id="chartdiv"></div>
+              <div id="chartdiv2"></div>
+              <div id="chartdiv3"></div>
  
     
         <p class="col-md-12 text-center">© 2021 | Design by Rebecca Joseph </p>

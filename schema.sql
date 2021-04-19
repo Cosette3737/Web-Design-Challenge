@@ -1,27 +1,33 @@
-SELECT * from bc;
+SELECT AVG *
+FROM benign;
 
 
-Create View malignant
-AS
-SELECT * from bc
-WHERE diagnosis = 'M';
+CREATE VIEW BENIGNAVE1 AS
+SELECT ROUND(AVG(texture_mean), 2 ) atm,
+ROUND(AVG(radius_mean), 2 ) arm,
+ROUND(AVG(perimeter_mean), 2 ) apm,
+ROUND(AVG(area_mean), 2 ) aam,
+ROUND(AVG(smoothness_mean), 2 ) assm,
+ROUND(AVG(compactness_mean), 2 ) acm,
+ROUND(AVG(concavity_mean), 2 ) acmm,
+ROUND(AVG(concave_mean), 2 ) accm,
+ROUND(AVG(symmetry_mean), 2 ) asm,
+ROUND(AVG(fractal_dimension_mean), 2 ) afmd
+FROM benign;
 
-Create View benign
-AS
-SELECT * from bc
-WHERE diagnosis = 'B';
 
-
-SELECT COUNT(diagnosis) as countbenign FROM benign;
-SELECT COUNT(diagnosis) as countmal FROM malignant;
-
-SELECT AVG(area_mean) as malAvg
+CREATE VIEW maligAVE1 AS
+SELECT ROUND(AVG(texture_mean), 2 ) atm,
+ROUND(AVG(radius_mean), 2 ) arm,
+ROUND(AVG(perimeter_mean), 2 ) apm,
+ROUND(AVG(area_mean), 2 ) aam,
+ROUND(AVG(smoothness_mean), 2 ) assm,
+ROUND(AVG(compactness_mean), 2 ) acm,
+ROUND(AVG(concavity_mean), 2 ) acmm,
+ROUND(AVG(concave_mean), 2 ) accm,
+ROUND(AVG(symmetry_mean), 2 ) asm,
+ROUND(AVG(fractal_dimension_mean), 2 ) afmd
 FROM malignant;
 
-SELECT AVG(perimeter_mean) as benlperimeterAVG
-from benign;
 
-Create View malave
-AS
-SELECT AVG(radius_mean), AVG(texture_mean), AVG(perimeter_mean), AVG(area_mean), AVG(smoothness_mean), AVG(compactness_mean, AVG(concavity_mean), AVG(symmetry_mean),
-WHERE diagnosis = 'M';
+SELECT * FROM maligAVE1;
