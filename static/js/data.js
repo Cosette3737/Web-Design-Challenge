@@ -5,8 +5,8 @@ $.ajax({
 }).done(successFunction);
 
   function successFunction(data){
-    console.log(data);
-      csvJSON(data);
+    //console.log(data);
+       csvJSON(data);
       function csvJSON(data){
         var lines=data.split("\n");
         var result = [];
@@ -19,14 +19,26 @@ $.ajax({
         obj[headers[j]] = currentline[j];
         }
 
-      result.push(obj);
-      console.log(result);
+        result.push(obj);
+        
+      }
+    //console.log(result);
+    for (i = 0; i<result.length-1; i++){
+      let id1 = result[i];
+      let title = (id1.id);
+      let id = (id1.id);
+      //console.log(title);
+      color = "#de4c4f"
+      let x = (id1.concavity_mean);
+      let y = (id1.compactness_mean);
+      let value = (id1.radius_mean);
+      bubdata =[title, id, color, x, y, value];
     
-    
-    //console.log(chart3.data);
+    //console.log(bubdata);
+          
   
 
-    am4core.ready(function(data) {
+  am4core.ready(function(data) {
  
 
 // Themes begin
@@ -167,75 +179,76 @@ $.ajax({
     
     
 
-  // //chart3
-  //   let chart3 = am4core.create("chartdiv3", am4charts.XYChart);
-  //   //console.log(data);
-  //   let valueAxisX = chart3.xAxes.push(new am4charts.ValueAxis());
-  //   valueAxisX.renderer.ticks.template.disabled = true;
-  //   valueAxisX.renderer.axisFills.template.disabled = true;
+  //chart3
+    let chart3 = am4core.create("chartdiv3", am4charts.XYChart);
+    //console.log(data);
+    let valueAxisX = chart3.xAxes.push(new am4charts.ValueAxis());
+    valueAxisX.renderer.ticks.template.disabled = true;
+    valueAxisX.renderer.axisFills.template.disabled = true;
 
-  //   let valueAxisY = chart3.yAxes.push(new am4charts.ValueAxis());
-  //   valueAxisY.renderer.ticks.template.disabled = true;
-  //   valueAxisY.renderer.axisFills.template.disabled = true;
+    let valueAxisY = chart3.yAxes.push(new am4charts.ValueAxis());
+    valueAxisY.renderer.ticks.template.disabled = true;
+    valueAxisY.renderer.axisFills.template.disabled = true;
 
-  //   let series = chart3.series.push(new am4charts.LineSeries());
-  //   series.dataFields.valueX = "x";
-  //   series.dataFields.valueY = "y";
-  //   series.dataFields.value = "value";
-  //   series.strokeOpacity = 0;
-  //   series.sequencedInterpolation = true;
-  //   series.tooltip.pointerOrientation = "vertical";
+    let series = chart3.series.push(new am4charts.LineSeries());
+    series.dataFields.valueX = "x";
+    series.dataFields.valueY = "y";
+    series.dataFields.value = "value";
+    series.strokeOpacity = 0;
+    series.sequencedInterpolation = true;
+    series.tooltip.pointerOrientation = "vertical";
 
-  //   let bullet = series.bullets.push(new am4core.Circle());
-  //   bullet.fill = am4core.color("#ff0000");
-  //   bullet.propertyFields.fill = "color";
-  //   bullet.strokeOpacity = 0;
-  //   bullet.strokeWidth = 2;
-  //   bullet.fillOpacity = 0.5;
-  //   bullet.stroke = am4core.color("#ffffff");
-  //   bullet.hiddenState.properties.opacity = 0;
-  //   bullet.tooltipText = "[bold]{title}:[/]\nPopulation: {value.value}\nIncome: {valueX.value}\nLife expectancy:{valueY.value}";
+    let bullet = series.bullets.push(new am4core.Circle());
+    bullet.fill = am4core.color("#ff0000");
+    bullet.propertyFields.fill = "color";
+    bullet.strokeOpacity = 0;
+    bullet.strokeWidth = 2;
+    bullet.fillOpacity = 0.5;
+    bullet.stroke = am4core.color("#ffffff");
+    bullet.hiddenState.properties.opacity = 0;
+    bullet.tooltipText = "[bold]{id}:[/]\nPopulation: {value.value}\nIncome: {valueX.value}\nLife expectancy:{valueY.value}";
 
-  //   let outline = chart.plotContainer.createChild(am4core.Circle);
-  //   outline.fillOpacity = 0;
-  //   outline.strokeOpacity = 0.8;
-  //   outline.stroke = am4core.color("#ff0000");
-  //   outline.strokeWidth = 2;
-  //   outline.hide(0);
+    let outline = chart.plotContainer.createChild(am4core.Circle);
+    outline.fillOpacity = 0;
+    outline.strokeOpacity = 0.8;
+    outline.stroke = am4core.color("#ff0000");
+    outline.strokeWidth = 2;
+    outline.hide(0);
 
-  //   let blurFilter = new am4core.BlurFilter();
-  //   outline.filters.push(blurFilter);
+    let blurFilter = new am4core.BlurFilter();
+    outline.filters.push(blurFilter);
+    
+    bullet.events.on("over", function(event) {
+      let target = event.target;
+      outline.radius = target.pixelRadius + 2;
+      outline.x = target.pixelX;
+      outline.y = target.pixelY;
+      outline.show();
+    })
 
-  //   bullet.events.on("over", function(event) {
-  //     let target = event.target;
-  //     outline.radius = target.pixelRadius + 2;
-  //     outline.x = target.pixelX;
-  //     outline.y = target.pixelY;
-  //     outline.show();
-  //   })
+    bullet.events.on("out", function(event) {
+      outline.hide();
+    })
 
-  //   bullet.events.on("out", function(event) {
-  //     outline.hide();
-  //   })
+    let hoverState = bullet.states.create("hover");
+    hoverState.properties.fillOpacity = 1;
+    hoverState.properties.strokeOpacity = 1;
 
-  //   let hoverState = bullet.states.create("hover");
-  //   hoverState.properties.fillOpacity = 1;
-  //   hoverState.properties.strokeOpacity = 1;
+    series.heatRules.push({ target: bullet, min: 2, max: 60, property: "radius" });
 
-  //   series.heatRules.push({ target: bullet, min: 2, max: 60, property: "radius" });
+    bullet.adapter.add("tooltipY", function (tooltipY, target) {
+      return -target.radius;
+    })
 
-  //   bullet.adapter.add("tooltipY", function (tooltipY, target) {
-  //     return -target.radius;
-  //   })
+    chart3.cursor = new am4charts.XYCursor();
+    chart3.cursor.behavior = "zoomXY";
+    chart3.cursor.snapToSeries = series;
 
-  //   chart3.cursor = new am4charts.XYCursor();
-  //   chart3.cursor.behavior = "zoomXY";
-  //   chart3.cursor.snapToSeries = series;
-
-  //   chart3.scrollbarX = new am4core.Scrollbar();
-  //   chart3.scrollbarY = new am4core.Scrollbar();
-  //   chart3.data = data;
-
-
-  }}
-  ;}
+    chart3.scrollbarX = new am4core.Scrollbar();
+    chart3.scrollbarY = new am4core.Scrollbar();
+    chart3.data = bubdata;
+    //console.log(chart3.data);
+    
+   // console.log(title);
+  }
+  }};
