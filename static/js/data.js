@@ -32,13 +32,13 @@ $.ajax({
       let x = (id1.concavity_mean);
       let y = (id1.compactness_mean);
       let value = (id1.radius_mean);
-      bubdata =[title, id, color, x, y, value];
-    
-    //console.log(bubdata);
+      bubdata = [title, id, color, x, y, value];
+    }
+    console.log(bubdata);
           
   
 
-  am4core.ready(function(data) {
+    am4core.ready(function(data) {
  
 
 // Themes begin
@@ -181,7 +181,7 @@ $.ajax({
 
   //chart3
     let chart3 = am4core.create("chartdiv3", am4charts.XYChart);
-    //console.log(data);
+    
     let valueAxisX = chart3.xAxes.push(new am4charts.ValueAxis());
     valueAxisX.renderer.ticks.template.disabled = true;
     valueAxisX.renderer.axisFills.template.disabled = true;
@@ -206,7 +206,7 @@ $.ajax({
     bullet.fillOpacity = 0.5;
     bullet.stroke = am4core.color("#ffffff");
     bullet.hiddenState.properties.opacity = 0;
-    bullet.tooltipText = "[bold]{id}:[/]\nPopulation: {value.value}\nIncome: {valueX.value}\nLife expectancy:{valueY.value}";
+    bullet.tooltipText = "[bold]{title}:[/]\nPopulation: {value.value}\nIncome: {valueX.value}\nLife expectancy:{valueY.value}";
 
     let outline = chart.plotContainer.createChild(am4core.Circle);
     outline.fillOpacity = 0;
@@ -247,8 +247,8 @@ $.ajax({
     chart3.scrollbarX = new am4core.Scrollbar();
     chart3.scrollbarY = new am4core.Scrollbar();
     chart3.data = bubdata;
-    //console.log(chart3.data);
+    console.log(chart3.data);
     
    // console.log(title);
   }
-  }};
+  };
