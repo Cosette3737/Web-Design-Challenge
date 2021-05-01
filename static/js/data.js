@@ -8,13 +8,12 @@ $.ajax({
     //console.log(data);
        csvJSON(data);
       function csvJSON(data){
-        var lines=data.split("\n");
+        var lines = data.split("\n");
         var result = [];
-        var headers=lines[0].split(",");
-        for(var i=1;i<lines.length;i++){
+        var headers = lines[0].split(",");
+        for(var i = 1; i<lines.length; i++){
         var obj = {};
         var currentline=lines[i].split(",");
-
         for(var j=0;j<headers.length;j++){
         obj[headers[j]] = currentline[j];
         }
@@ -22,22 +21,17 @@ $.ajax({
         result.push(obj);
         
       }
-    //console.log(result);
-    for (i = 0; i<result.length-1; i++){
-      let id1 = result[i];
-      let title = (id1.id);
-      let id = (id1.id);
-      //console.log(title);
-      color = "#de4c4f"
-      let x = (id1.concavity_mean);
-      let y = (id1.compactness_mean);
-      let value = (id1.radius_mean);
-      bubdata = [title, id, color, x, y, value];
-    }
-    console.log(bubdata);
-          
-  
-
+    console.log(result);
+    var Numbers = result.map(item => {
+      if (item.diagnosis == "M") {
+        color = "#eea638";
+      } else {
+        color = "#a638ee";
+      }
+        return {color: color, id: item.id, diagnosis: item.diagnosis, x: +(item.concavity_mean), y:+(item.compactness_mean), value: +(item.radius_mean)};
+      });  
+        console.log(Numbers);
+    
     am4core.ready(function(data) {
  
 
@@ -180,6 +174,7 @@ $.ajax({
     
 
   //chart3
+    
     let chart3 = am4core.create("chartdiv3", am4charts.XYChart);
     
     let valueAxisX = chart3.xAxes.push(new am4charts.ValueAxis());
@@ -197,7 +192,8 @@ $.ajax({
     series.strokeOpacity = 0;
     series.sequencedInterpolation = true;
     series.tooltip.pointerOrientation = "vertical";
-
+    
+   
     let bullet = series.bullets.push(new am4core.Circle());
     bullet.fill = am4core.color("#ff0000");
     bullet.propertyFields.fill = "color";
@@ -206,7 +202,7 @@ $.ajax({
     bullet.fillOpacity = 0.5;
     bullet.stroke = am4core.color("#ffffff");
     bullet.hiddenState.properties.opacity = 0;
-    bullet.tooltipText = "[bold]{title}:[/]\nPopulation: {value.value}\nIncome: {valueX.value}\nLife expectancy:{valueY.value}";
+    bullet.tooltipText = "[bold]Diagnosis: {diagnosis}:[/]\nID: {id}\n Radius Mean: {value}\nConcavity Mean: {valueX.value}\nCompactness Mean: {valueY.value}";
 
     let outline = chart.plotContainer.createChild(am4core.Circle);
     outline.fillOpacity = 0;
@@ -246,9 +242,6 @@ $.ajax({
 
     chart3.scrollbarX = new am4core.Scrollbar();
     chart3.scrollbarY = new am4core.Scrollbar();
-    chart3.data = bubdata;
-    console.log(chart3.data);
-    
-   // console.log(title);
+    chart3.data = Numbers;
   }
   };
