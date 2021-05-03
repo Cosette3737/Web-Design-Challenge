@@ -1,8 +1,10 @@
 from flask import Flask, render_template, jsonify, request
 import pickle
 import requests
-import numpy as numpy
+import numpy as np
 import sklearn
+import xgboost
+from xgboost import XGBClassifier as xgb
 import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
@@ -35,10 +37,9 @@ def predict():
     if request.method == 'POST':
         Texture = float(request.form['Texture'])
         Area = float(request.form['Area'])
-        Concave = request.form['Concave']
+        Concave = float(request.form['Concave'])
         Smoothness = float(request.form['Smoothness'])
         Symmetry = float(request.form['Symmetry'])
-        Texture = float(request.form['Texture'])
         Concavity = float(request.form['Concavity'])
         Compactness = float(request.form['Compactness'])
         Fractal_Dimension = float(request.form['Fractal_Dimension'])
@@ -47,23 +48,23 @@ def predict():
         
       
     # open file pickle.load x and y
-    new_data = [[Texture, Area, Concave, Smoothness, Symmetry, Texture, Concavity, Compactness, Fractal_Dimension, Radius, Perimeter]]
-    
+    new_data1 = [[Texture, Area, Concave, Smoothness, Symmetry, Concavity, Compactness, Fractal_Dimension, Radius, Perimeter]]
+    new_data = np.shape(new_data1)
     # apply x scaler to xdata
     model = pickle.load(open("finalized_model.sav", "rb"))
-
-    print(new_data)
-    prediction = (model.predict(new_data))
-    print(prediction)
+    ##print(new_data)
+    x_query = model(new_data1)
+    #prediction = (model.predict(x_query))
+    print(x_query)
     # apply y scaler.inverse transform
-    output = round(prediction[0],2)
+    output = (new_data)
 
    
-    print (output)
+    #print (output)
 
 
     if output:           #condition for invalid values
-        return render_template('tool.html', prediction_text ="These diagnostic features indicate".format(output))
+        return render_template('tool.html', prediction_text ="These diagnostic features indicate" .format(new_data1))
         
     #html form to be displayed on screen when no values are inserted; without any output or prediction
     else:
@@ -85,6 +86,6 @@ def data():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug = True)
    # port = int(os.environ.get("PORT", 5000))
     #app.run(host='0.0.0.0', port=port)
