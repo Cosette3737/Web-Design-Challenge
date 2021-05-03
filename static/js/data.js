@@ -24,9 +24,9 @@ $.ajax({
     console.log(result);
     var Numbers = result.map(item => {
       if (item.diagnosis == "M") {
-        color = "#eea638";
+        color = "#67b7dc";
       } else {
-        color = "#a638ee";
+        color = "#ffcc00";
       }
         return {color: color, id: item.id, diagnosis: item.diagnosis, x: +(item.concavity_mean), y:+(item.compactness_mean), value: +(item.radius_mean)};
       });  
@@ -154,7 +154,7 @@ $.ajax({
     var maleRange = valueAxis.axisRanges.create();
     maleRange.value = -10;
     maleRange.endValue = 0;
-    maleRange.label.text = "Male";
+    maleRange.label.text = "Benign";
     maleRange.label.fill = chart.colors.list[0];
     maleRange.label.dy = 20;
     maleRange.label.fontWeight = '600';
@@ -164,7 +164,7 @@ $.ajax({
     var femaleRange = valueAxis.axisRanges.create();
     femaleRange.value = 0;
     femaleRange.endValue = 10;
-    femaleRange.label.text = "Female";
+    femaleRange.label.text = "Malignant";
     femaleRange.label.fill = chart.colors.list[1];
     femaleRange.label.dy = 20;
     femaleRange.label.fontWeight = '600';
@@ -195,14 +195,14 @@ $.ajax({
     
    
     let bullet = series.bullets.push(new am4core.Circle());
-    bullet.fill = am4core.color("#ff0000");
+    bullet.fill = am4core.color("#eea63");
     bullet.propertyFields.fill = "color";
     bullet.strokeOpacity = 0;
     bullet.strokeWidth = 2;
     bullet.fillOpacity = 0.5;
     bullet.stroke = am4core.color("#ffffff");
     bullet.hiddenState.properties.opacity = 0;
-    bullet.tooltipText = "[bold]Diagnosis: {diagnosis}:[/]\nID: {id}\n Radius Mean: {value}\nConcavity Mean: {valueX.value}\nCompactness Mean: {valueY.value}";
+    bullet.tooltipText = "[bold]Diagnosis: {diagnosis}[/]\nID: {id}\n Radius Mean: {value}\nConcavity Mean: {valueX.value}\nCompactness Mean: {valueY.value}";
 
     let outline = chart.plotContainer.createChild(am4core.Circle);
     outline.fillOpacity = 0;
@@ -243,5 +243,5 @@ $.ajax({
     chart3.scrollbarX = new am4core.Scrollbar();
     chart3.scrollbarY = new am4core.Scrollbar();
     chart3.data = Numbers;
-  }
-  };
+      }
+      };
