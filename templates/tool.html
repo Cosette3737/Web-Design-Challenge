@@ -11,10 +11,10 @@
   <style>
     p {
       font-size: 14px;
-      font-weight: bolder;
+      font-weight: bold;
     }
     input[type=text], select {
-      width: 80%;
+      width: 400px;
       padding: 12px 20px;
       margin: 8px 0;
       display: inline-block;
@@ -25,7 +25,7 @@
     
     input[type=submit] {
       width: 80%;
-      background-color: rgb(54, 109, 197);
+      background-color: rgb(233, 47, 202);
       color:black;
       padding: 14px 20px;
       margin: 8px 0;
@@ -39,23 +39,21 @@
     
     
     input[type=submit]:hover {
-      background-color: rgb(204, 149, 20);
+      background-color: rgb(177, 100, 164);
     }
     form{
-        border-radius: 10px;
-        padding-top: 5%;
-        width: 80%;
-        margin-left: 55px;;
+      width: 350px;
+      height: 525px;
     }
     h1.section-title{
       text-align: center;
-      color: rgb(26, 6, 139);;
+      color: rgb(207, 7, 191);
       margin-bottom: 50px;
       text-transform: uppercase;
     }
     h3{
       color: rgb(10, 10, 10);
-      font-weight: bold;
+      font-size: 17px;
     }
     
     body {
@@ -64,7 +62,7 @@
                 background-repeat: no-repeat;
                 background-size: cover;
                 text-align: center;
-                background: #eee !important;
+                background: (255, 255, 255); !important;
             }
            
   </style>
@@ -80,15 +78,17 @@
         <div class="row">
             <div class="col-md-12 text-center">
               <br>
-                <h1 class="section-title h1">Breast Cancer</h1>
-                  <h4 style="text-align: center">Enter criteria for tumor classification</h4>
+                <h1 class="section-title h1">Breast Cancer Prediction Tool</h1>
+                <p style="padding-bottom: 20px; border-bottom-width: 1px; border-top-color: black; border-top-style: solid"></p>
+                  <h4 style="text-align: center">Enter measurements for classification prediction</h4>
                   <br>
-                  <p style="padding-bottom: 20px; border-bottom-width: 1px; border-top-color: black; border-top-style: solid"></p>
+                  
             </div>
 
   <div class="col-md-6 text-center">
    <!-- Html form which will get all the values from user -->
-    <form action = "{{ url_for('predict')}}" method = "post" style="background-color: #dbdfdfea">
+    <form action = "{{ url_for('predict')}}" method = "post" style="background-color: (255, 255, 255);">
+      
       <label for = "Texture">Texture</label><br>
         <input type = "text" id = "Texture" name = "Texture" placeholder = "19" required = "required"><br>
           <label for="Area">Area </label><br>
@@ -99,7 +99,11 @@
                     <input type="text" id = "Smoothness" name = "Smoothness" placeholder = ".1" required = "required"><br>
                       <label for = "Symmetry">Symmetry</label><br>
                       <input type = "text" id = "Symmetry" name = "Symmetry" placeholder = ".1" required = "required"><br>
-                    <label for="Concavity">Concavity </label><br>
+                     </div>
+                     <div class="col-md-6 text-center">
+                      <!-- Html form which will get all the values from user -->
+                       <form action = "{{ url_for('predict')}}" method = "post" style="background-color: #eee">
+                     <label for="Concavity">Concavity </label><br>
                   <input type="text" id = "Concavity" name = "Concavity" placeholder = "0.5" required = "required"><br>
                 <label for = "Compactness">Compactness</label><br>
               <input type = "text" id = "Compactness" name = "Compactness" placeholder = "0.5" required = "required"><br>
@@ -109,31 +113,16 @@
       <input type = "text" id = "Radius" name = "Radius" placeholder = "13" required = "required"><br>
     <label for="Perimeter">Perimeter </label><br>
   <input type="text" id = "Perimeter" name = "Perimeter" placeholder = "90" required = "required"><br>
-        
   </select><br>
         <br>
-  <!-- submit button -->           
+</div>
+  <!-- submit button -->   
+  <div class = "col-md-12 text-center">
       <input type = "submit" value="Calculate Selling Price">
       <br><br>
     </form>
   </div>
-  <div class="col-md-6 text-center">
-    <form style="background-color:#dbdfdfea">
-      <br>
-      <h3 style = "font-size:30px; color:#57595D; text-align: Center;"> Terms:</h3><br>
-          <p style = "font-size:20px; color:#57595D; text-align: Center;">Texture </p>
-          <p style = "font-size:20px; color:#57595D; text-align: Center;">Area <p>
-          <p style = "font-size:20px; color:#57595D; text-align: Center;">Concave  </p>
-          <p style = "font-size:20px; color:#57595D; text-align: Center;">Smoothness  </p>
-          <p style = "font-size:20px; color:#57595D; text-align: Center;">Symmetry  </p>
-          <p style = "font-size:20px; color:#57595D; text-align: Center;">Concavity  </p>
-          <p style = "font-size:20px; color:#57595D; text-align: Center;">Compactness</p>  
-          <p style = "font-size:20px; color:#57595D; text-align: Center;">Fractal Dimension  </p>
-          <p style = "font-size:20px; color:#57595D; text-align: Center;">Radius </p>
-          <p style = "font-size:20px; color:#57595D; text-align: Center;">Perimeter </p>
-          <br>
-    </form>
-  </div>
+  
       
   <!-- the predicted text -->
   <div class = "col-md-12 text-center">
@@ -142,8 +131,8 @@
   </div>
     <br>
     <br>
-      <p class="col-md-12 text-center">© 2021 | Design by Rebecca Joseph </p>
-        <p class="col-md-12 text-center">***We do not guarantee accuracy of diagnosis and predictions*** | </a><a href="https://www.stats.indiana.edu/topic/sdf.asp"> Visit the Indiana Stats Data Here</a> <br>
-      </p>
+      <h3 class="col-md-12 text-center">© 2021 | Design by Rebecca Joseph </h3>
+        <h3 class="col-md-12 text-center">***We do not guarantee accuracy of diagnosis and predictions*** | </a><a href="https://www.stats.indiana.edu/topic/sdf.asp"> Visit the Indiana Stats Data Here</a> <br>
+        </h3>
     </body>   
 </html>

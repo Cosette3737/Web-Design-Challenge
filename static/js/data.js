@@ -26,7 +26,7 @@ $.ajax({
       if (item.diagnosis == "M") {
         color = "#67b7dc";
       } else {
-        color = "#ffcc00";
+        color = "#FF007F";
       }
         return {color: color, id: item.id, diagnosis: item.diagnosis, x: +(item.concavity_mean), y:+(item.compactness_mean), value: +(item.radius_mean)};
       });  
