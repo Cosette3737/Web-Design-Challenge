@@ -5,6 +5,21 @@
     background: rgb(255, 255, 255) !important;
 }
 
+#chartdiv {
+    width: 500px;
+    height: 500px;
+
+}
+#chartdiv2 {
+    width: 900px;
+    height: 900px;
+
+}
+#chartdiv3 {
+    width: 900px;
+    height: 900px;
+
+}
 .btn-primary:hover,
 .btn-primary:focus {
     background-color: rgb(238, 48, 190);
