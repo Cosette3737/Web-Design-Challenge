@@ -62,7 +62,7 @@
                 background-repeat: no-repeat;
                 background-size: cover;
                 text-align: center;
-                background: (255, 255, 255); !important;
+                background: (255, 255, 255);
             }
            
   </style>
@@ -82,7 +82,7 @@
                 <p style="padding-bottom: 20px; border-bottom-width: 1px; border-top-color: black; border-top-style: solid"></p>
                   <h4 style="text-align: center">Enter measurements for classification prediction</h4>
                   <br>
-                  
+                  <h1>{{ prediction_text }}</h1>
             </div>
 
   <div class="col-md-6 text-center">
@@ -121,13 +121,7 @@
       <input type = "submit" value="Calculate Selling Price">
       <br><br>
     </form>
-  </div>
-  
-      
-  <!-- the predicted text -->
-  <div class = "col-md-12 text-center">
-    <br>
-      <h3>{{ prediction_text }}</h3>
+  </div><br>
   </div>
     <br>
     <br>
