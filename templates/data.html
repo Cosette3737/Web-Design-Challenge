@@ -19,36 +19,7 @@
   <title>Breast Cancer</title>
 
   <style>
-    #container {
-      display: flex;
-      flex-flow: row wrap;
-  
-  /* Then we define how is distributed the remaining space */
-      justify-content: space-around;
-      padding: 0;
-      margin: 0;
-      list-style: none;
-      }
-
-    #chartdiv {
-      grid-column: 1;
-      grid-row: 1 / 3;
-      width: 100%;
-      height: 250px;
-    }
-    #chartdiv2 {
-      width: 80%;
-      height: 600px;
-    }
-      #chartdiv3 {
-        width: 80%;
-        height: 800px
-      }
-      #chartdiv4 {
-        width: 80%;
-        height: 800px
-      }
-      </style>
+  </style>
     <!------ Include the above in your HEAD tag ---------->
 </head>
 <body>
@@ -58,24 +29,145 @@
           <div class="row">
               <div class="col-md-12 text-center">
                 <br>
-                  <h1 class="section-title h1">Diagnostic Feature Dashboard </h1>
+                  <h1 class="section-title h1">Diagnostic Feature Presentation </h1>
                   <p style="padding-bottom: 20px; border-bottom-width: 1px; border-top-color: black; border-top-style: solid"></p>
-                    <h4 style="text-align: center">Explore the data used in this study</h4>
+                    <h4 style="text-align: center">Explore the features used in this study to predict pathology</h4>
                     <br>
     <!-- Team -->
     <section id = "team" class="pb-5">
-            <div class = "container">
-            <div class ="col-md-12"></div>
+      <section id="work">
 
-            <div id = "chartdiv"></div>
-            <p style="padding-bottom: 20px; border-bottom-width: 1px; border-top-color:rgb(207, 7, 191); border-top-style: solid"></p>
-            <div id = "chartdiv2"></div>
-            <p style="padding-bottom: 20px; border-bottom-width: 1px; border-top-color:rgb(207, 7, 191); border-top-style: solid"></p>
-            <div id = "chartdiv3"></div>
-            <p style="padding-bottom: 20px; border-bottom-width: 1px; border-top-color: rgb(207, 7, 191); border-top-style: solid"></p>
-           </div>   
-          
+                  
+        <h3 class="headline scroll-animated">Diagnostic features</h3>
+        
+        <!-- SHOWCASE -->
+        <div class="showcase">
            
+           <!-- ITEM -->
+            <div class="item scroll-animated">
+              
+              <!-- LIGHTBOX LINK -->
+                <a href="#" data-featherlight="#item-1-lightbox">
+                
+                <!-- INFO -->
+                    <div class="info">
+                <!-- CONTAINER MID -->
+                        <div class="container-mid">
+                        <h5>Presentation of Malignancy in sampled specimen</h5>
+                        <h3> Benign VS. Malignant</h3>
+                        </div>
+                        <!-- /CONTAINER MID -->
+                    </div>
+                    <!-- /INFO -->
+                    
+                    <div id ="chartdiv"></div>
+            </a>
+                <!-- /LIGHTBOX LINK -->
+                <!-- LIGHTBOX -->
+             <div id="item-1-lightbox" class="work-lightbox">
+                    <img class="img-responsive" src="static/images/breastcancer.jpg" alt="image">
+                    <h3> Benign VS. Malignant</h3>
+                    <p class="subline">Malignancy VS Benign Results</p>
+                    
+                    
+                </div>
+                <!-- /LIGHTBOX -->
+                <!-- /LIGHTBOX -->
+        </div>
+                <!-- ITEM 2 -->
+        <div class="item scroll-animated">
+            <!-- LIGHTBOX LINK -->
+              <a href="#" data-featherlight="#item-2-lightbox">
+              <!-- INFO -->
+                  <div class="info">
+<!-- CONTAINER MID -->
+                    <div class="container-mid">
+                        <h5>Presentation Features</h5>
+                        <h3>How the samples compare between benign and malignant lesions</h3>
+                    </div>
+                      <!-- /CONTAINER MID -->
+                </div>
+                  <!-- /INFO -->
+                  <div id = "chartdiv2"></div>
+              <!-- /LIGHTBOX LINK -->
+              <!-- LIGHTBOX -->
+              <div id="item-2-lightbox" class="work-lightbox">
+                <img class="img-responsive" src="static/images/breastcancer.jpg" alt="Dashboard">
+                <h3>Diagnostic features</h3>
+                <p class="subline"></p>
+                 </div>
+                </div>
+              <!-- /LIGHTBOX -->
+              <!-- ITEM 3-->
+              <!-- ITEM -->
+              <div class="item scroll-animated">
+                          
+                <!-- LIGHTBOX LINK -->
+                  <a href="#" data-featherlight="#item-3-lightbox">
+                  
+                  <!-- INFO -->
+                      <div class="info">
+                  <!-- CONTAINER MID -->
+                          <div class="container-mid">
+                          <h5>Bubble Graph</h5>
+                          <h3>Presentation of each sample</h3>
+                          </div>
+                          <!-- /CONTAINER MID -->
+                      </div>
+                      <!-- /INFO -->
+                      <div id = "chartdiv3"></div>
+                  
+              </a>
+                  <!-- /LIGHTBOX LINK -->
+                  <!-- LIGHTBOX -->
+               <div id="item-3-lightbox" class="work-lightbox">
+                      <img class="img-responsive" src="static/images/histo.png" alt="image">
+                      <h3> Bubble Graph</h3>
+                      <p class="subline">Explore each data point in relation to the datset</p>
+                      
+                        
+                      
+                          
+                      
+                  </div>
+                  <!-- /LIGHTBOX -->
+                  <!-- /LIGHTBOX -->
+          </div>
+          <!-- ITEM -->
+          <div class="item scroll-animated">
+                          
+            <!-- LIGHTBOX LINK -->
+              <a href="#" data-featherlight="#item-4-lightbox">
+              
+              <!-- INFO -->
+                  <div class="info">
+              <!-- CONTAINER MID -->
+                      <div class="container-mid">
+                      <h5>Feature Correlation</h5>
+                      <h3>Scatter Plot of Features</h3>
+                      </div>
+                      <!-- /CONTAINER MID -->
+                  </div>
+                  <!-- /INFO -->
+              <div class="background-image" style="background-image: url(assets/img/covidback.JPG)"></div>
+          </a>
+              <!-- /LIGHTBOX LINK -->
+              <!-- LIGHTBOX -->
+           <div id="item-1-lightbox" class="work-lightbox">
+                  <img class="img-responsive" src="static/images/scatterplot.png" alt="image">
+                  <h3> Feature Correlation</h3>
+                  <p class="subline">Explore the correlations between features and prediction</p>
+                  <p>   </p>
+                      
+                  
+              </div>
+              <!-- /LIGHTBOX -->
+              <!-- /LIGHTBOX -->
+      </div>
+    </section>
+          <!--/team-->
+           <!--Footer-->
+           <br>
         <p class="col-md-12 text-center">© 2021 | Design by Rebecca Joseph </p>
           <p class="col-md-12 text-center">***We do not guarantee accuracy of diagnostic features*** | </a><a href="https://www.kaggle.com/uciml/breast-cancer-wisconsin-data"> Visit the Data Here</a> <br>
         </p>
