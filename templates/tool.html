@@ -80,12 +80,12 @@
               <br>
                 <h1 class="section-title h1">Breast Cancer Prediction Tool</h1>
                 <p style="padding-bottom: 20px; border-bottom-width: 1px; border-top-color: black; border-top-style: solid"></p>
-                  <h4 style="text-align: center">Enter measurements for classification prediction</h4>
+                  <h4 style="text-align: center">Enter measurements for prediction of histology:</h4>
                   <br>
                   <h1>{{ prediction_text }}</h1>
             </div>
 
-  <div class="col-md-6 text-center">
+  <div class="col-md-6 text-center" style= "border-right-width: 1px; border-right-color: black; border-right-style: solid">
    <!-- Html form which will get all the values from user -->
     <form action = "{{ url_for('predict')}}" method = "post" style="background-color: (255, 255, 255);">
       
@@ -99,7 +99,7 @@
                     <input type="text" id = "Smoothness" name = "Smoothness" placeholder = ".1" required = "required"><br>
                       <label for = "Symmetry">Symmetry</label><br>
                       <input type = "text" id = "Symmetry" name = "Symmetry" placeholder = ".1" required = "required"><br>
-                     </div>
+                    </div>
                      <div class="col-md-6 text-center">
                       <!-- Html form which will get all the values from user -->
                        <form action = "{{ url_for('predict')}}" method = "post" style="background-color: #eee">
@@ -118,7 +118,7 @@
 </div>
   <!-- submit button -->   
   <div class = "col-md-12 text-center">
-      <input type = "submit" value="Calculate Selling Price">
+      <input type = "submit" value="Predict Tissue Type">
       <br><br>
     </form>
   </div><br>
