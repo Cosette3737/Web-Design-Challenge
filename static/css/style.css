@@ -1,5 +1,110 @@
 /* FontAwesome for working BootSnippet :> */
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+body {
+    background: url('https://raw.githubusercontent.com/Cosette3737/Web-Design-Challenge/main/static/images/breastcancerribbon.jpg') no-repeat center center;
+    background-size: 1400px 750px;
+    background-position: 30%;
+    background-attachment: fixed;
+    
+    
+  }
+  .text {
+    font-family: raleway;
+    font-size: 60px;
+    position: absolute center;
+    text-align: center;
+    padding-left: 0%;
+    color: #000;
+    margin-top: 300px;
+    opacity:.9;
+  }
+  
+  .text1 {
+    font-family: raleway;
+    font-size: 22px;
+    text-align: center;
+    padding-left: 0%;
+    margin-top: -20px;
+    color: #000;
+    font-weight: 500;
+  }
+  
+  .image {
+    text-align: center;
+    width: 200px;
+    /* Container's dimensions */
+    
+    height: 200px;
+    -webkit-border-radius: 75%;
+    -moz-border-radius: 75%;
+    box-shadow: 0 0 0 1px #eee;
+    background-size: cover;
+    margin: auto;
+    margin-top: 100px;
+    padding-left: 50%;
+    margin-bottom: -30px;
+    align-content: left;
+  }
+  
+  
+  
+  
+  
+  .image:hover {
+    box-shadow: 0px 5px 20px .9px #3F3F3F;
+  }
+  
+  .image:hover {
+    -webkit-transform: scale(1.12);
+    transform: scale(1.12);
+    -webkit-transition: 1.6s ease-in-out;
+    transition: 1.6s ease-in-out;
+  }
+  
+  
+  
+  .trick:hover img {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  
+  #overlay {
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    padding: 0 0 0 0;
+    opacity: 1.0;
+    -webkit-transition: opacity 2.25s ease;
+    -moz-transition: opacity 10.25s ease;
+  }
+  
+  #box:hover #overlay {
+    opacity: 1;
+  }
+  
+  
+  
+  
+  
+  .panel-group{
+    width:350px;
+    margin:auto;
+    /*margin:50px 400px 50px 400px;*/
+    max-width:100%;
+  }
+  
+  .panel-heading{
+    background-color:transparent !important;
+  }
+  
+  .title{
+    text-align: center;
+    background-color:transparent;
+    color:#000;
+    font-family:lato;
+    font-weight:300;
+    font-size:15px;
+    max-width:100%;
+  }
 
 #team {
     background: rgb(255, 255, 255) !important;
