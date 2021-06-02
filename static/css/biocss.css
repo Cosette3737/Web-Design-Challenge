@@ -1,8 +1,9 @@
 body {
     background: url('https://raw.githubusercontent.com/Cosette3737/Web-Design-Challenge/main/static/images/workplace.jpg') no-repeat center center;
-    background-size: 1400px 700px;
+    background-size: 1400px 750px;
     background-position: 30%;
     background-attachment: fixed;
+    
   }
   
   
@@ -36,9 +37,9 @@ body {
     background: url("https://avatars.githubusercontent.com/u/69566005?s=400&u=9595591a968e9e8494a531256873902f3acc8566&v=4.jpg") center center no-repeat;
     background-size: cover;
     margin: auto;
-    margin-top: 20px;
+    margin-top: 100px;
     margin-bottom: -30px;
-    align-content: center;
+    align-content: left;
   }
   
   
