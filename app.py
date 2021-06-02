@@ -21,7 +21,7 @@ app = Flask(__name__,
 #load the ml model which we have saved earlier in .pkl format            
 model = pickle.load(open('finalized_model.sav', 'rb'))
 
-@app.route('/index')
+@app.route('/')
 def home():
     return render_template('index1.html')
 
@@ -73,7 +73,7 @@ def predict():
 def explore():
     return render_template('explore.html')
 
-@app.route('/bio')
+@app.route('/bio2')
 def bio():
     return render_template('bio.html') 
 
