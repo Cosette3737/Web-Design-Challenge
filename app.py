@@ -73,9 +73,9 @@ def predict():
 def explore():
     return render_template('explore.html')
 
-@app.route('/bio2')
+@app.route('/bio')
 def bio():
-    return render_template('bio.html') 
+    return render_template('bio2.html') 
 
 
 @app.route('/data')
