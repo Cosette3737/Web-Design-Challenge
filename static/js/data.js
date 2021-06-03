@@ -42,7 +42,7 @@ $.ajax({
     var chart = am4core.create("chartdiv", am4charts.PieChart3D);
     chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
 
-    chart.legend = new am4charts.Legend();
+    //chart.legend = new am4charts.Legend();
 
     chart.data = [
     {
@@ -122,9 +122,9 @@ $.ajax({
     valueAxis.renderer.ticks.template.length = 5;
     valueAxis.renderer.ticks.template.disabled = false;
     valueAxis.renderer.ticks.template.strokeOpacity = 0.4;
-    valueAxis.renderer.labels.template.adapter.add("text", function(text) {
-      return text == "Benign" || text == "Malignant" ? text : text + "%";
-    })
+    //valueAxis.renderer.labels.template.adapter.add("text", function(text) {
+     // return text == "Benign" || text == "Malignant" ? text : text + "%";
+    //})
     
     // Create series
     var male = chart.series.push(new am4charts.ColumnSeries());
@@ -133,7 +133,7 @@ $.ajax({
     male.clustered = false;
     
     var maleLabel = male.bullets.push(new am4charts.LabelBullet());
-    maleLabel.label.text = "{valueX}%";
+    maleLabel.label.text = "{valueX}";
     maleLabel.label.hideOversized = false;
     maleLabel.label.truncate = false;
     maleLabel.label.horizontalCenter = "right";
@@ -145,7 +145,7 @@ $.ajax({
     female.clustered = false;
     
     var femaleLabel = female.bullets.push(new am4charts.LabelBullet());
-    femaleLabel.label.text = "{valueX}%";
+    femaleLabel.label.text = "{valueX}";
     femaleLabel.label.hideOversized = false;
     femaleLabel.label.truncate = false;
     femaleLabel.label.horizontalCenter = "left";
