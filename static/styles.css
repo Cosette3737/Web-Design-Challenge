@@ -25,15 +25,14 @@
     font-family: raleway;
     font-size: 21px;
     text-align: center;
-    margin-top: -20px;
+    margin-top: -300px;
     color: #000;
   }
   
   .image {
-    text-align: center;
+    text-align: left;
     width: 200px;
     /* Container's dimensions */
-    
     height: 200px;
     -webkit-border-radius: 75%;
     -moz-border-radius: 75%;
@@ -41,7 +40,7 @@
     background: url("https://avatars.githubusercontent.com/u/69566005?s=400&u=9595591a968e9e8494a531256873902f3acc8566&v=4.jpg") center center no-repeat;
     background-size: cover;
     margin: auto;
-    margin-top: 100px;
+    margin-top: 155px;
     margin-bottom: -30px;
     align-content: left;
   }
@@ -85,10 +84,6 @@
     opacity: 1;
   }
   
-  
-  
-  
-  
   .panel-group{
     width:350px;
     margin:auto;
@@ -105,7 +100,7 @@
     background-color:transparent;
     color:#000;
     font-family:lato;
-    font-weight:300;
+    font-weight:350;
     font-size:15px;
     max-width:100%;
   }
