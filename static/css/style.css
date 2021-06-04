@@ -1,7 +1,7 @@
 /* FontAwesome for working BootSnippet :> */
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 body {
-    background: url('https://raw.githubusercontent.com/Cosette3737/Web-Design-Challenge/main/static/images/breastcancerribbon.jpg') no-repeat center center;
+    background: url('https://raw.githubusercontent.com/Cosette3737/Web-Design-Challenge/main/static/images/backgroundimage.jpeg') no-repeat center center;
     background-size:100%;
     background-position: 30%;
     background-attachment: fixed;
