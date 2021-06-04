@@ -2,7 +2,7 @@
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 body {
     background: url('https://raw.githubusercontent.com/Cosette3737/Web-Design-Challenge/main/static/images/breastcancerribbon.jpg') no-repeat center center;
-    background-size: 100%;
+    background-size:100%;
     background-position: 30%;
     background-attachment: fixed;
     
@@ -103,7 +103,7 @@ body {
   }
 
 #team {
-    background: rgb(218, 224, 211) !important;
+    background: rgb(235, 236, 234) !important;
 }
 
 #chartdiv {
