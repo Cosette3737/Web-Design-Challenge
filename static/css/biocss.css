@@ -89,6 +89,7 @@ body {
     margin:auto;
     /*margin:50px 400px 50px 400px;*/
     max-width:100%;
+    background-color:transparent !important;
   }
   
   .panel-heading{
