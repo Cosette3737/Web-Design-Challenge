@@ -33,16 +33,22 @@ body {
     -webkit-border-radius: 75%;
     -moz-border-radius: 75%;
     box-shadow: 0 0 0 1px #eee;
-    background: url("https://raw.githubusercontent.com/MaxBrowning/butler-project3-groupD/main/images/becky.png") center center no-repeat;
-    background-size: cover;
     margin: auto;
     margin-top: 100px;
     margin-bottom: -30px;
     align-content: left;
   }
   
-  
-  
+  .graphimage{
+    width: 250px;
+    height: 300px;
+    display: block;
+    margin-left: auto;
+     margin-right: auto;
+    
+
+}
+
   .trick {
     display: inline-block;
     vertical-align: 150px;
