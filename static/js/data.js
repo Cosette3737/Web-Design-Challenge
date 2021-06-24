@@ -136,7 +136,7 @@ $.ajax({
     maleLabel.label.text = "{valueX}";
     maleLabel.label.hideOversized = false;
     maleLabel.label.truncate = false;
-    maleLabel.label.horizontalCenter = "right";
+    maleLabel.label.horizontalCenter = "left";
     maleLabel.label.dx = -10;
     
     var female = chart.series.push(new am4charts.ColumnSeries());
@@ -148,7 +148,7 @@ $.ajax({
     femaleLabel.label.text = "{valueX}";
     femaleLabel.label.hideOversized = false;
     femaleLabel.label.truncate = false;
-    femaleLabel.label.horizontalCenter = "center";
+    femaleLabel.label.horizontalCenter = "right";
     femaleLabel.label.dx = 10;
     
     var maleRange = valueAxis.axisRanges.create();
