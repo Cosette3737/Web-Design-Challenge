@@ -104,11 +104,21 @@ body {
 
 #team {
     background: rgb(235, 236, 234) !important;
+    width: 100%;
+  height: 100%;
 }
 
+#container {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 130px;
+
+}
+
+
 #chartdiv {
-    width: 90%;
-    height: 90%;
+    width: 50%;
+    height: 70%;
     margin-bottom: 130px;
 
 }
