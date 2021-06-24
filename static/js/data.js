@@ -55,11 +55,13 @@ $.ajax({
     }
   ];
 
-    chart.innerRadius = 50;
+    chart.innerRadius = 30;
 
     var series = chart.series.push(new am4charts.PieSeries3D());
     series.dataFields.value = "Number";
     series.dataFields.category = "Diagnosis";
+    series.alignLabels = false;
+    series.labels.template.text = ""
     })
     var chart = am4core.create("chartdiv2", am4charts.XYChart);
 
@@ -137,7 +139,7 @@ $.ajax({
     maleLabel.label.hideOversized = false;
     maleLabel.label.truncate = false;
     maleLabel.label.horizontalCenter = "left";
-    maleLabel.label.dx = -10;
+    maleLabel.label.dx = -30;
     
     var female = chart.series.push(new am4charts.ColumnSeries());
     female.dataFields.valueX = "Malignant";
@@ -149,7 +151,7 @@ $.ajax({
     femaleLabel.label.hideOversized = false;
     femaleLabel.label.truncate = false;
     femaleLabel.label.horizontalCenter = "right";
-    femaleLabel.label.dx = 10;
+    femaleLabel.label.dx = 35;
     
     var maleRange = valueAxis.axisRanges.create();
     maleRange.value = -10;
@@ -157,6 +159,7 @@ $.ajax({
     maleRange.label.text = "Benign";
     maleRange.label.fill = chart.colors.list[0];
     maleRange.label.dy = 20;
+    maleRange.label.dx = -100;
     maleRange.label.fontWeight = '600';
     maleRange.grid.strokeOpacity = 1;
     maleRange.grid.stroke = male.stroke;
@@ -167,6 +170,7 @@ $.ajax({
     femaleRange.label.text = "Malignant";
     femaleRange.label.fill = chart.colors.list[1];
     femaleRange.label.dy = 20;
+    femaleRange.label.dx = 200;
     femaleRange.label.fontWeight = '600';
     femaleRange.grid.strokeOpacity = 1;
     femaleRange.grid.stroke = female.stroke;
