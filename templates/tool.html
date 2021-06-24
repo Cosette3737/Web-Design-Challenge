@@ -68,11 +68,8 @@
            
   </style>
 </head>
-
 <body>
-
   {% include 'navbar.html' %}
-
   <br>
   <section id="team" class="pb-5">
     <main class="container">
@@ -85,45 +82,40 @@
                   <br>
                   <h1>{{ prediction_text }}</h1>
             </div>
-
-  <div class="col-md-6 text-center" >
-   <!-- Html form which will get all the values from user -->
-    <form action = "{{ url_for('predict')}}" method = "post" style="background-color: (255, 255, 255);">
-      
-      <label for = "Texture">Texture</label><br>
-        <input type = "text" id = "Texture" name = "Texture" placeholder = "19" required = "required"><br>
-          <label for="Area">Area </label><br>
-            <input type="text" id = "Area" name = "Area" placeholder = "600" required = "required"><br>
-              <label for = "Concave">Concave</label><br>
-                <input type = "text" id = "Concave" name = "Concave" placeholder = ".05" required = "required"><br>
-                  <label for="Smoothness">Smoothness </label><br>
+            <div class="col-md-6 text-center" >
+              <form action = "{{ url_for('predict')}}" method = "post" style="background-color: (255, 255, 255);">
+                <label for = "Texture">Texture</label><br>
+                  <input type = "text" id = "Texture" name = "Texture" placeholder = "19" required = "required"><br>
+                    <label for="Area">Area </label><br>
+                      <input type="text" id = "Area" name = "Area" placeholder = "600" required = "required"><br>
+                        <label for = "Concave">Concave</label><br>
+                        <input type = "text" id = "Concave" name = "Concave" placeholder = ".05" required = "required"><br>
+                       <label for="Smoothness">Smoothness </label><br>
                     <input type="text" id = "Smoothness" name = "Smoothness" placeholder = ".1" required = "required"><br>
-                      <label for = "Symmetry">Symmetry</label><br>
-                      <input type = "text" id = "Symmetry" name = "Symmetry" placeholder = ".1" required = "required"><br>
-                    </div>
-                     <div class="col-md-6 text-center">
-                      <!-- Html form which will get all the values from user -->
-                       <form action = "{{ url_for('predict')}}" method = "post" style="background-color: #eee">
-                     <label for="Concavity">Concavity </label><br>
-                  <input type="text" id = "Concavity" name = "Concavity" placeholder = "0.5" required = "required"><br>
-                <label for = "Compactness">Compactness</label><br>
-              <input type = "text" id = "Compactness" name = "Compactness" placeholder = "0.5" required = "required"><br>
-            <label for="Fractal_Dimension">Fractal Dimension </label><br>
-          <input type="text" id = "Fractal_Dimension" name = "Fractal_Dimension" placeholder = ".05" required = "required"><br>
-        <label for = "Radius">Radius</label><br>
-      <input type = "text" id = "Radius" name = "Radius" placeholder = "13" required = "required"><br>
-    <label for="Perimeter">Perimeter </label><br>
-  <input type="text" id = "Perimeter" name = "Perimeter" placeholder = "90" required = "required"><br>
-  </select><br>
-        <br>
-</div>
+                  <label for = "Symmetry">Symmetry</label><br>
+                <input type = "text" id = "Symmetry" name = "Symmetry" placeholder = ".1" required = "required"><br>
+              </div>
+              <div class="col-md-6 text-center">
+               <form action = "{{ url_for('predict')}}" method = "post" style="background-color: #eee">
+                  <label for="Concavity">Concavity </label><br>
+                    <input type="text" id = "Concavity" name = "Concavity" placeholder = "0.5" required = "required"><br>
+                      <label for = "Compactness">Compactness</label><br>
+                        <input type = "text" id = "Compactness" name = "Compactness" placeholder = "0.5" required = "required"><br>
+                          <label for="Fractal_Dimension">Fractal Dimension </label><br>
+                        <input type="text" id = "Fractal_Dimension" name = "Fractal_Dimension" placeholder = ".05" required = "required"><br>
+                      <label for = "Radius">Radius</label><br>
+                    <input type = "text" id = "Radius" name = "Radius" placeholder = "13" required = "required"><br>
+                  <label for="Perimeter">Perimeter </label><br>
+                <input type="text" id = "Perimeter" name = "Perimeter" placeholder = "90" required = "required"><br>
+               </select><br><br>
+              </div>
   <!-- submit button -->   
-  <div class = "col-md-12 text-center">
-      <input type = "submit" value="Predict Tissue Type">
-      <br><br>
-    </form>
-  </div><br>
-  </div>
+                <div class = "col-md-12 text-center">
+                  <input type = "submit" value="Predict Tissue Type">
+                  <br><br>
+          </form>
+        </div><br>
+      </div>
     <br>
     <br>
     <p class="col-md-12 text-center">© 2021 | Design by Rebecca Joseph </p>
