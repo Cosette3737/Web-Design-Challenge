@@ -148,7 +148,7 @@ $.ajax({
     femaleLabel.label.text = "{valueX}";
     femaleLabel.label.hideOversized = false;
     femaleLabel.label.truncate = false;
-    femaleLabel.label.horizontalCenter = "left";
+    femaleLabel.label.horizontalCenter = "center";
     femaleLabel.label.dx = 10;
     
     var maleRange = valueAxis.axisRanges.create();

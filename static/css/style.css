@@ -105,35 +105,27 @@ body {
 #team {
     background: rgb(235, 236, 234) !important;
     width: 100%;
-  height: 100%;
+    height: 100%;
 }
 
 #container {
   width: 100%;
   height: 100%;
-  margin-bottom: 130px;
-
-}
-
-
-#chartdiv {
-    width: 50%;
-    height: 70%;
-    margin-bottom: 130px;
-
+  
 }
 #chartdiv2 {
-    width: 100%;
-    height: 100%;
-    margin-bottom: 400px;
+  width: 100%;
+  height: 550px;
 
 }
 #chartdiv3 {
-    width: 100%;
-    height:100%;
-    margin-bottom: 50px;
-    
+  width: 100%;
+  height: 450px;
+  
+
 }
+
+
 .graphimage{
     width: 600px;
     height: 600px;
